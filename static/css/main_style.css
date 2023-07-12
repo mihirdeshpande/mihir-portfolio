@@ -38,19 +38,19 @@ p {
   margin-bottom: 20px;
 }
 
-#home {
+#about {
   background-color: #333;
 }
 
-#about {
+#education {
   background-color: #444;
 }
 
-#services {
+#experience {
   background-color: #555;
 }
 
-#contact {
+#projects {
   background-color: #666;
 }
 
