@@ -9,20 +9,21 @@
 
   <!-- My CSS -->
   <link rel="stylesheet" href="static/css/main_style.css">
+  <link rel="stylesheet" href="static/css/welcome_bar.css">
 
   <!-- Bootstrap core CSS -->
   <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Font Awesome CDN link -->
   <script src="https://kit.fontawesome.com/34061474bc.js" crossorigin="anonymous"></script>
-
+  
 </head>
 
 <body>
 
   <nav class="navbar shadow-sm fixed-top bg-black">
     <div class="container-fluid row align-self-end">
-      <a class="navbar-brand align-items-center text-light text-center" href="#">
+      <a id="welcome-div" class="navbar-brand message-transition align-items-center text-light text-center" href="#">
         Welcome!
       </a>
     </div>
@@ -33,7 +34,7 @@
     <h2 class="mb-3" style="color:yellow; font-family:cursive;">Hi, I'm Mihir!</h2>
     <div class="row justify-content-center">
       <div class="col-6">
-        <p class="text-light">I am a highly motivated and self driven individual with passion for coding in financial industry. I have over 7 years of experience in Financial Technology sector and I learn fast to keep up with the pace of this industry. I am an excellent team player with strong communication skills and also have basic knowledge of major financial products.
+        <p class="text-light">I am a highly motivated and self driven individual with passion for coding in financial industry. I have over 7 years of experience in Financial Technology sector and I learn fast to keep up with the pace of this industry. I am an excellent team player with strong communication skills and also have knowledge of all major financial products.
       </p>
       </div>
     </div>
@@ -52,16 +53,16 @@
     </div>
   </section>
 
+  <!-- Experience Section -->
   <section id="experience" class="section">
     <h2 class="mb-3" style="color:yellow; font-family:cursive;">Professional Experience</h2>
-    <div class="row justify-content-center">
-      <div class="col-6">
+    <div class="row justify-content-left col-7">
       <h4 class="text-light mb-2">
           <a href="https://about.bankofamerica.com/en/our-company" style="color:dodgerblue; text-decoration:none">Bank of America</a>
       </h4>
-      <p class="text-light">
-        Software Engineer III <br>
-        Feb 2022 - present
+      <p class="text-light small-text">
+        Software Engineer III 
+        <i>(Feb 2022 - present)</i>
       </p>
 
       <p class="text-light">
@@ -114,8 +115,6 @@
       </p>
       </p>
       
-        
-      </div>
     </div>
   </section>
 
@@ -124,5 +123,6 @@
     <p>Projects section</p>
   </section>
 </body>
-
+<!-- my js files -->
+  <script src="static/js/welcome_bar.js"></script>
 </html>

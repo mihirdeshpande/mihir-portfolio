@@ -53,3 +53,7 @@ p {
 #projects {
   background-color: #666;
 }
+
+.small-text{
+  font-size:15px;
+}
