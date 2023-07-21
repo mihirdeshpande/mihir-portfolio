@@ -65,33 +65,46 @@ p {
   justify-content: center;
 }
 
-.overlay-text {
-    position: absolute;
-    top: 40%; /* Adjust the position of the text vertically */
-    right: 10%; /* Adjust the position of the text horizontally */
-    
-    font-size: 16px; /* Adjust the font size as needed */
-    color: white; /* Adjust the text color */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Optional: Add shadow to the text */
+.headshot-intro{
+  color: lightgoldenrodyellow;
+  font-size: 18px;
 }
 
-.circularimage {
-    position: absolute;
-    top: 10%; /* Adjust the position of the overlay image vertically */
-    right: 15%; /* Adjust the position of the overlay image horizontally */
-    border-radius: 100px;
-    box-shadow: 0 0 10px 5px rgba(255,255,255,.2);
-    height:200px;
+.overlay-div{
+  position: absolute;
+  top: 10%; /* Adjust the position of the text vertically */
+  right: 8%; /* Adjust the position of the text horizontally */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Optional: Add shadow to the text */
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.circular-image {
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 100px !important;
+    box-shadow: 0 0 10px 5px rgba(255,255,255,.2) !important;
+    height:200px !important;
+    margin-left: 50px;
 }
 
 @media (max-width: 768px) {
-            .overlay-text {
-                font-size: 10px; /* Adjust font size for smaller screens */
-                top: 18%;
-                right: 10%;
-            }
+            .overlay-div{
+                position: absolute;
+                top: 10%; /* Adjust the position of the text vertically */
+                right: 4%; /* Adjust the position of the text horizontally */
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Optional: Add shadow to the text */
+                justify-content: center !important;
+                align-items: center !important;
+              }
             
-            .circularimage {
-              height:40px;
+            .circular-image {
+              margin-left: 40px;
+              height:40px !important;
             }
+
+            .headshot-intro{
+                color: lightgoldenrodyellow;
+                font-size: 6px;
+              }
         }
