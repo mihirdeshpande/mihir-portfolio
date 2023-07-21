@@ -64,3 +64,34 @@ p {
   align-items: center;
   justify-content: center;
 }
+
+.overlay-text {
+    position: absolute;
+    top: 40%; /* Adjust the position of the text vertically */
+    right: 10%; /* Adjust the position of the text horizontally */
+    
+    font-size: 16px; /* Adjust the font size as needed */
+    color: white; /* Adjust the text color */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Optional: Add shadow to the text */
+}
+
+.circularimage {
+    position: absolute;
+    top: 10%; /* Adjust the position of the overlay image vertically */
+    right: 15%; /* Adjust the position of the overlay image horizontally */
+    border-radius: 100px;
+    box-shadow: 0 0 10px 5px rgba(255,255,255,.2);
+    height:200px;
+}
+
+@media (max-width: 768px) {
+            .overlay-text {
+                font-size: 10px; /* Adjust font size for smaller screens */
+                top: 18%;
+                right: 10%;
+            }
+            
+            .circularimage {
+              height:40px;
+            }
+        }
