@@ -39,19 +39,19 @@ p {
 }
 
 #about {
-  background-color: #333;
+  background-color: rgba(0, 25, 49, 0.95);
 }
 
 #education {
-  background-color: #444;
+  background-color: rgba(0, 34, 74, 0.95);
 }
 
 #experience {
-  background-color: #555;
+  background-color: rgba(0, 48, 79, 0.95);
 }
 
 #projects {
-  background-color: #666;
+  background-color: rgba(0, 60, 95, 0.95);
 }
 
 .small-text{
