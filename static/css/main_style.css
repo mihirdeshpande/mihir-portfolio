@@ -27,11 +27,13 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #fff;
+.section-head{
+  font-size: 32px;
+  color:#e3e4e6; 
+  font-family:roboto;
+  margin-bottom: 100px;
 }
+
 
 p {
   font-size: 18px;
@@ -55,7 +57,8 @@ p {
 }
 
 .small-text{
-  font-size:15px;
+  font-size:16px;
+  color: white;
 }
 
 .menu-item{
@@ -66,7 +69,6 @@ p {
 }
 
 .headshot-intro{
-  color: lightgoldenrodyellow;
   font-size: 18px;
 }
 
@@ -108,3 +110,23 @@ p {
                 font-size: 6px;
               }
         }
+
+
+.centered-col {
+      display: flex;
+      justify-content: center;
+    }
+
+.left-aligned {
+  text-align: left; 
+  width: 100%;
+}
+
+.experience-description-text{
+  color: #b3c1c4;
+  margin-bottom: 45px;
+}
+
+.intro-description-text{
+  color: #b3c1c4;
+}
