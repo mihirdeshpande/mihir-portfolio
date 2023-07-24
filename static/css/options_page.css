@@ -1,0 +1,48 @@
+.options-background{
+  background-color: rgba(0, 25, 49, 0.95);
+  width: 100%;
+  height: 100vh;
+}
+
+.options-input{
+  background-color: rgba(0, 25, 49, 0.95);
+}
+
+#user-budget{
+  display: flex;
+  align-items: center;
+  background-color: rgba(13, 37, 60, 0.95);
+  border-left: solid 5px rgba(0, 25, 49, 0.95);
+  border-right: solid 5px rgba(0, 25, 49, 0.95);
+  border-bottom: solid 5px rgba(0, 25, 49, 0);
+  font-size: 32px;
+  color:#e3e4e6; 
+  font-family:roboto;
+  outine: none;
+}
+
+#user-budget:focus{
+  outline: none;  
+}
+
+#generate-strategy-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(13, 37, 60, 0.95) !important;
+  border-right: solid 5px rgba(0, 25, 49, 0.95);
+  font-size: 32px;
+  color:#e3e4e6 !important; 
+  font-family:roboto;
+  outline: none !important;
+  border: none;
+}
+
+#generate-strategy-btn:hover{
+  color:#00d5ff !important;
+}
+
+.starategy-results{
+  height: 100vh;
+  background-color: rgba(0, 34, 74, 0.95);
+}

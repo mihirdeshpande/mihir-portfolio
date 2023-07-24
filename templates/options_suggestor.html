@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mihir - Options</title>
+  
+  <!-- My CSS -->
+  <link rel="stylesheet" href="/static/css/main_style.css">
+  <link rel="stylesheet" href="/static/css/options_page.css">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome CDN link -->
+  <script src="https://kit.fontawesome.com/34061474bc.js" crossorigin="anonymous"></script>
+  
+</head>
+
+
+<body>
+     <div class="container-fluid row fixed-top" style="background-color:#011931;">
+        <a class="navbar-brand pb-3 pt-3 text-light text-center" style="font-size:40px;margin-left:10px;font-family:roboto;" ref="#">Options Strategies</a>
+
+      <!-- Add more menu items for each section -->
+    </div>
+
+  <div style="height:92px; background-color:#011931;"></div>
+
+  <!-- Options suggestor input-->
+  <div class="text-light">
+    <div class="row options-input">
+      <h2 class="col-4 text-center pb-4 pt-5 section-head">What's your budget ($) ?</h2>
+      <input class="text-light text-center col-4" type="text" id="user-budget" name="user-budget" placeholder="Enter budget here ..." oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        <input class="text-light align-items-center col-4 pb-4 pt-4 ps-4 pe-4" type="button" id="generate-strategy-btn" value="Generate Strategies">
+    </div>
+  </div>
+
+  <div class="starategy-results">
+    
+  </div>
+
+  <!-- my js files  -->
+  <script src="/static/jquery/jquery.min.js"></script>
+  <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/static/js/option_suggestor.js"></script>
+  
+</body>
+
+</html>
