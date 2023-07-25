@@ -43,6 +43,46 @@
 }
 
 .starategy-results{
+  background-color: rgba(0, 25, 49, 1) !important;
   height: 100vh;
+}
+
+.strategy-main-header{
+  font-family:roboto;
+  color:#fff;
+  font-size: 32px;
+  background-color: rgba(0, 25, 49, 0.95);
+  margin-bottom: 0px !important;
+}
+
+.strategy-div{
+  
+}
+
+.strategy-div:nth-child(odd) {
   background-color: rgba(0, 34, 74, 0.95);
+  background-color: rgba(13, 37, 60, 0.95);
+}
+
+/* Apply background color to even divs */
+.strategy-div:nth-child(even) {
+    background-color: rgba(0, 25, 49, 0.95);
+}
+
+.strategy-title{
+  font-family:roboto;
+  font-size: 28px;
+  margin-bottom: 0px;
+  color: #fff;
+}
+
+.strategy-property{
+  color: #bbb;
+  font-size: 18px;
+}
+
+.strategy-property-value{
+  font-family:roboto;
+  color: #bbb;
+  font-size: 18px;
 }

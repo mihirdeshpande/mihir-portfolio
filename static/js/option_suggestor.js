@@ -8,15 +8,14 @@ $(document).ready(function() {
 function get_strategies() {
   fetch('/options/get_strategies/')
       .then(function (response) {
-          return response.json();
-      }).then(function (strategies_list) {
-          display_strategies(strategies_list); 
+          return response.text();
+      }).then(function (strategies_html) {
+          display_strategies(strategies_html); 
       });
 }
 
-function display_strategies(strategies_list){
-  console.log("Here are the results: ");
-  console.log(strategies_list);
+function display_strategies(strategies_html){
+  document.getElementById('starategy-results-div').innerHTML = strategies_html;
 }
 
 

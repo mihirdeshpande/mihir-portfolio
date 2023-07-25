@@ -14,7 +14,9 @@ def render_options():
 @app.route("/options/get_strategies/")
 def fetch_strategies():
   strategies = get_strategies(1000)
-  return strategies
+  return render_template('options_strategies_results.html',
+                        strategies=strategies,
+                        generated_at='7/25 @ 2:25:44 PM')
   
 
 if __name__ == "__main__":

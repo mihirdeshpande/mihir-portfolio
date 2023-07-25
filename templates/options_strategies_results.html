@@ -1,0 +1,19 @@
+<p class="pt-2 pb-2 strategy-main-header" style="text-align:center;">Strategies Generated
+</p>
+<div class="text-light">
+  {% for strategy in strategies %}
+    <div class="row justify-content-center strategy-div align-center pt-2 pb-2">
+      <div class="col-8">
+        <p class="strategy-title pt-1 pb-1">
+          {{strategy['name']}}
+        </p>
+        <p>
+          <span class="strategy-property">Symbol: </span><span class="strategy-property-value">{{strategy['symbol']}}</span><br>
+          <span class="strategy-property">Current Price: </span><span class="strategy-property-value">$ {{strategy['price']}} </span><br>
+          <span class="strategy-property">Min. Investment: </span><span class="strategy-property-value">$ {{strategy['min_investment']}}</span><br>
+          <span class="strategy-property">Details: </span><span class="strategy-property-value">{{strategy['details']}}</span><br>
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
