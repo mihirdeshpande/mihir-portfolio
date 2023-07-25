@@ -1,5 +1,9 @@
+import datetime
+import pytz
+
 from flask import Flask, render_template, request
 from server_code.options.get_strategies import get_strategies
+from server_code.utils.utils import get_est_now
 
 app = Flask(__name__)
 
@@ -16,7 +20,7 @@ def fetch_strategies():
   strategies = get_strategies(1000)
   return render_template('options_strategies_results.html',
                         strategies=strategies,
-                        generated_at='7/25 @ 2:25:44 PM')
+                        generated_at=get_est_now().strftime("%m/%d/%Y %I:%M:%S %p"))
   
 
 if __name__ == "__main__":
