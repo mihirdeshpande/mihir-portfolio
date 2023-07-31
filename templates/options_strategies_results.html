@@ -12,10 +12,18 @@
           {{strategy['name']}}
         </p>
         <p>
+          <span class="strategy-property">Company: </span><span class="strategy-property-value">{{strategy['shortName']}}</span><br>
           <span class="strategy-property">Symbol: </span><span class="strategy-property-value">{{strategy['symbol']}}</span><br>
           <span class="strategy-property">Current Price: </span><span class="strategy-property-value">$ {{strategy['price']}} </span><br>
           <span class="strategy-property">Min. Investment: </span><span class="strategy-property-value">$ {{strategy['min_investment']}}</span><br>
-          <span class="strategy-property">Details: </span><span class="strategy-property-value">{{strategy['details']}}</span><br>
+          <span class="strategy-property">Max Profit: </span><span class="strategy-property-value">{{strategy['max_profit']}}</span><br>
+          <span class="strategy-property">Max Loss: </span><span class="strategy-property-value">{{strategy['max_loss']}}</span><br>
+          <span class="strategy-property">Suggested Strike: </span><span class="strategy-property-value">{{strategy['suggested_strike']}}</span><br>
+          <span class="strategy-property">Suggested Expiry: </span><span class="strategy-property-value">{{strategy['suggested_expiry']}}</span><br>
+          <span class="strategy-property">Profit/Risk Ratio: </span><span class="strategy-property-value">{{strategy['profit_to_risk']}}</span><br>
+          {% if 'strike' in my_dict %}
+            <p>Strike: {{ my_dict['strike'] }}</p>
+          {% endif %}
         </p>
       </div>
     </div>

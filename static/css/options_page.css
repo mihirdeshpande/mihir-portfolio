@@ -108,6 +108,7 @@
 }
 
 .loading-message {
+  text-align: center;
   color: #ddd;
   font-family:roboto;
   font-size: 28px;
