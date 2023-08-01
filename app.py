@@ -18,9 +18,11 @@ def render_options():
 @app.route("/options/get_strategies/")
 def fetch_strategies():
   strategies = get_strategies(1000)
-  return render_template('options_strategies_results.html',
-                        strategies=strategies,
-                        generated_at=get_est_now().strftime("%m/%d/%Y %I:%M:%S %p"))
+  if strategies:
+    return render_template('options_strategies_results.html',
+                          strategies=strategies,
+                          generated_at=get_est_now().strftime("%m/%d/%Y %I:%M:%S %p"))
+  return "No investable strategies found within budget!"
   
 
 if __name__ == "__main__":

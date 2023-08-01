@@ -53,8 +53,8 @@ class PutCreditStrategy:
             return
         if ((sell_spread + buy_spread) / (sell_strike - buy_strike)) > 0.05:
             return
-        if profit_to_risk < 0.25:
-            return
+        # if profit_to_risk < 0.25:
+        #     return
 
         self.put_credit_list.append({'name': 'Put Credit Spread', 'symbol': row['symbol'], 'price': row['currentPrice'],
                                      'max_profit': max_profit, 'max_loss': max_loss,

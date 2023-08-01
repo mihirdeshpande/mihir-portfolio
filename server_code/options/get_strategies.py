@@ -32,7 +32,7 @@ class OptionStrategies:
         return True
 
     def __populate_symbols_info(self):
-        tickers_object = yf.Tickers(MOST_TRADED_SYMBOLS)
+        tickers_object = yf.Tickers(MOST_TRADED_SYMBOLS[:100])
         self.tickers_info = tickers_object.tickers   # tickers_info: {symbol: yfinance.Ticker}
         rows = []
         for symbol, symbol_ticker in self.tickers_info.items():
@@ -70,10 +70,14 @@ class OptionStrategies:
 
 
 def get_strategies(budget):
+    print("Starting...")
     option_strategies = OptionStrategies(budget=budget)
     option_strategies.setup()
+    print("Setup Done...")
     option_strategies.get_put_credit_spreads()
-    return option_strategies.all_strategies
+    print("Below generated: ")
+    print(option_strategies.all_strategies)
+    return option_strategies.all_strategies or []
 
 
 if __name__ == '__main__':
