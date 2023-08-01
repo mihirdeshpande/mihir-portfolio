@@ -51,8 +51,8 @@ class PutCreditStrategy:
         # Checks for filtering out bad selections
         if min_investment > self.budget:
             return
-        if ((sell_spread + buy_spread) / (sell_strike - buy_strike)) > 0.05:
-            return
+        # if ((sell_spread + buy_spread) / (sell_strike - buy_strike)) > 0.05:
+        #     return
         # if profit_to_risk < 0.25:
         #     return
 
