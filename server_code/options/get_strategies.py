@@ -32,7 +32,7 @@ class OptionStrategies:
         return True
 
     def __populate_symbols_info(self):
-        tickers_object = yf.Tickers(MOST_TRADED_SYMBOLS[:250])
+        tickers_object = yf.Tickers(MOST_TRADED_SYMBOLS)
         self.tickers_info = tickers_object.tickers   # tickers_info: {symbol: yfinance.Ticker}
         rows = []
         for symbol, symbol_ticker in self.tickers_info.items():
