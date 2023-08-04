@@ -1,4 +1,5 @@
 import copy
+import concurrent.futures
 
 import pandas as pd
 import yfinance as yf
@@ -45,10 +46,32 @@ class OptionStrategies:
         self.__symbols_info_df = pd.DataFrame(rows, columns=BASIC_INFO_COLUMNS)
         x = 1
 
+    def __get_ticker_data(self, symbol, symbol_ticker):
+        try:
+            if self.are_weekly_options_available(symbol_ticker):
+                return self.get_basic_info_row(symbol_ticker)
+        except Exception as ex:
+            return None
+
+    def __populate_symbols_info_threaded(self):
+        tickers_object = yf.Tickers(MOST_TRADED_SYMBOLS)
+        self.tickers_info = tickers_object.tickers   # tickers_info: {symbol: yfinance.Ticker}
+        rows = []
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+            futures = [executor.submit(self.__get_ticker_data, symbol, symbol_ticker) for symbol, symbol_ticker in self.tickers_info.items()]
+
+            # Wait for all futures to complete
+            concurrent.futures.wait(futures)
+
+            # Retrieve the results from the futures (ticker data or None for failed requests)
+            rows = [future.result() for future in futures]
+
+        self.__symbols_info_df = pd.DataFrame(rows, columns=BASIC_INFO_COLUMNS)
+
     @property
     def symbols_info(self):
         if self.__symbols_info_df is None:
-            self.__populate_symbols_info()
+            self.__populate_symbols_info_threaded()
         return self.__symbols_info_df
 
     def get_put_credit_spreads(self):
@@ -64,9 +87,9 @@ class OptionStrategies:
         add_daily_moves(self.__symbols_info_df)
 
     def setup(self):
-        self.__populate_symbols_info()
+        # self.__populate_symbols_info()
+        self.__populate_symbols_info_threaded()
         self.process_info_df()
-        x = 1
 
 
 def get_strategies(budget):
