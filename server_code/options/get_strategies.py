@@ -9,6 +9,7 @@ from datetime import datetime
 from server_code.options.most_traded_symbols import MOST_TRADED_SYMBOLS
 from server_code.options.consts import BASIC_INFO_COLUMNS
 from server_code.options.put_credit_spread import PutCreditStrategy
+from server_code.options.call_credit_spread import CallCreditStrategy
 from server_code.options.utils import add_daily_moves
 
 
@@ -85,6 +86,12 @@ class OptionStrategies:
     put_strategies = put_strategy.get_put_credit_strategies()
     self.all_strategies.extend(put_strategies)
 
+  def get_call_credit_spreads(self):
+    call_strategy = CallCreditStrategy(copy.deepcopy(self.__symbols_info_df),
+                                     self.budget, self.tickers_info)
+    call_strategies = call_strategy.get_call_credit_strategies()
+    self.all_strategies.extend(call_strategies)
+
   def clean_info_df(self):
     self.__symbols_info_df = self.__symbols_info_df.dropna(
       subset=['currentPrice'])
@@ -100,19 +107,21 @@ class OptionStrategies:
 
 
 def get_strategies(budget):
-  print("Starting 10 thread...")
-  option_strategies = OptionStrategies(budget=budget)
+    print("Starting 10 thread...")
+    option_strategies = OptionStrategies(budget=budget)
 
-  start_time = time.time()
-  option_strategies.setup()
-  end_time = time.time()
-  elapsed_time = end_time - start_time
-  print(f"Elapsed Time: {elapsed_time:.6f} seconds")
-  print("Setup Done...")
-  option_strategies.get_put_credit_spreads()
-  print("Below generated: ")
-  # print(option_strategies.all_strategies)
-  return option_strategies.all_strategies
+    start_time = time.time()
+    option_strategies.setup()
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"Elapsed Time: {elapsed_time:.6f} seconds")
+    print("Setup Done...")
+    option_strategies.get_put_credit_spreads()
+    option_strategies.get_call_credit_spreads()
+    print("Below generated: ")
+    # print(option_strategies.all_strategies)
+    option_strategies.all_strategies.sort(key=lambda x: x['profit_to_risk'], reverse=True)
+    return option_strategies.all_strategies
 
 
 if __name__ == '__main__':
