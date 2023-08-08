@@ -7,7 +7,16 @@ $(document).ready(function() {
 
 function get_strategies() {
   showLoadingOverlay();
-  fetch('/options/get_strategies/')
+  var budget = document.getElementById('user-budget').value;
+  var get_strategies_url = `/options/get_strategies?budget=${budget}`;
+  fetch(get_strategies_url,
+       {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+      }
+       )
       .then(function (response) {
           return response.text();
       }).then(function (strategies_html) {
