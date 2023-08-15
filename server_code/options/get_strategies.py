@@ -70,7 +70,7 @@ class OptionStrategies:
             concurrent.futures.wait(futures)
 
             # Retrieve the results from the futures (ticker data or None for failed requests)
-            rows = [future.result() for future in futures]
+            rows = [future.result() for future in futures if future.result()]
 
         self.__symbols_info_df = pd.DataFrame(rows, columns=BASIC_INFO_COLUMNS)
 
